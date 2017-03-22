@@ -1,5 +1,5 @@
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Eleri2 on 20.03.2017.
@@ -17,7 +17,6 @@ public abstract class Mängija {
         kaardidKäes.add(kaart);
     }
 
-    public abstract Kaart käiKaart(List kaardidLaual);
+    public abstract Kaart käiKaart(List<Kaart> kaardidLaual);
 
-    
 }
