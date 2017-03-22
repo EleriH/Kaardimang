@@ -44,7 +44,7 @@ public class Mäng {
 
             if ((i == alustajaIndeks) ||
                     ((k.getMast()==kõigeTugevamKaart.getMast()) &&
-                            (k.getNumber() > kõigeTugevamKaart.getNumber())) {
+                            (k.getNumber() > kõigeTugevamKaart.getNumber()))) {
                 kõigeTugevamIndeks = i;
                 kõigeTugevamKaart = k;
             }
