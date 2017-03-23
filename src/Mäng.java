@@ -35,7 +35,7 @@ public class Mäng {
         }
 
         System.out.println("Tulemused:");
-        for (Mängija m: mängijad) {
+        for (Mängija m : mängijad) {
             System.out.println(m.getNimi() + ": " + m.getSkoor());
         }
     }
@@ -52,7 +52,7 @@ public class Mäng {
             kaardidLaual.add(k);
             System.out.println(m.getNimi() + " käib " + k);
             if ((i == alustajaIndeks) ||
-                    ((k.getMast()==kõigeTugevamKaart.getMast()) &&
+                    ((k.getMast() == kõigeTugevamKaart.getMast()) &&
                             (k.getNumber() > kõigeTugevamKaart.getNumber()))) {
                 kõigeTugevamIndeks = i;
                 kõigeTugevamKaart = k;
