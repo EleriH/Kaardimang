@@ -2,13 +2,14 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by Eleri on 22.03.2017.
+ * Valib kardi täitsa juhuslikult olenemata lauale käidud kaartide mastist või numbrist.
  */
 public class JuhuslikMängija extends Mängija{
 
     public JuhuslikMängija(String nimi) {
         super(nimi);
     }
+
 
     @Override
     public Kaart käiKaart(List<Kaart> kaardidLaual) {

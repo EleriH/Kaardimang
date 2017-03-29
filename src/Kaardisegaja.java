@@ -6,6 +6,12 @@ import java.util.Random;
  * Created by Eleri2 on 20.03.2017.
  */
 public class Kaardisegaja {
+
+    /**
+     * Väljastab listina kaardipaki kaardid (klass Kaart) suvalises järjekorras
+     * @param suur määrab, kas tegemist suure kaardipakika (true) või väikse (false)
+     * @return list Kaart objektidest suvalises järjekorras
+     */
     public static List<Kaart> valiKaardipakk(boolean suur) {
         int algus;
         if (suur) {

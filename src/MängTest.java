@@ -10,7 +10,7 @@ public class MängTest {
 
         ArrayList<Mängija> mängijad = new ArrayList<>();
         mängijad.add(new JuhuslikMängija("Totu"));
-        mängijad.add(new JuhuslikMängija("Lotu"));
+        mängijad.add(new TargemJuhuslikMängija("Lotu"));
 
         Mäng mäng = new Mäng(pakk, mängijad);
 

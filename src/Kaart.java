@@ -1,7 +1,10 @@
 /**
- * Created by Eleri2 on 20.03.2017.
+ * Klass kaart vastab teatud kaardipaki kaardile, mille number ja mast on määratud vastavate isendiväljadega.
+ * Mõlema isendivälja tüübiks on int, mille tähendus on määratud staatiliste stringi arraydega mastiNimi ja numbriNimi.
+ * Isendiväljade korrektsust hetkel ei kontrollita. Ebakorrektne väärtus põhjustab programmi töös vea.
  */
 public class Kaart {
+
     private int number;
     private int mast;
 

@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Eleri2 on 20.03.2017.
+ * Abstarktne alusklass ühe mängu mängija kohta, mille funktsiooniks on hoida kättejagatud kaardipakki ja otsustada,
+ * milline kaart igal mängu sammul käia sõltuvalt juba lauale käidud kaartidest.
  */
 public abstract class Mängija {
     protected String nimi;
