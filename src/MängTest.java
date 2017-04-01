@@ -18,7 +18,7 @@ public class MängTest {
             mängijad.add(new JuhuslikMängija(nimi));
         }
 
-        List<Kaart> pakk = Kaardisegaja.valiKaardipakk(true);
+        List<Kaart> pakk = Kaardisegaja.valiKaardipakk(false);
 
 
         Mäng mäng = new Mäng(pakk, mängijad);
