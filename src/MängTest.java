@@ -7,18 +7,19 @@ import java.util.Scanner;
  */
 public class MängTest {
     public static void main(String[] args) {
+        List<Mängija> mängijad = new ArrayList<>();
 
         Scanner reader = new Scanner(System.in);
-        System.out.println("Sisesta mängija nimi: ");
-        String a = reader.next();
-        System.out.println("Sisesta vastasmängija nimi: ");
-        String b = reader.next();
+        System.out.println("Sisesta mängijate arv: ");
+        int mArv = reader.nextInt();
+        for (int i=0; i < mArv; i++) {
+            System.out.println("Sisesta mängija nimi: ");
+            String nimi = reader.next();
+            mängijad.add(new JuhuslikMängija(nimi));
+        }
 
         List<Kaart> pakk = Kaardisegaja.valiKaardipakk(true);
 
-        List<Mängija> mängijad = new ArrayList<>();
-        mängijad.add(new JuhuslikMängija(a));
-        mängijad.add(new TargemJuhuslikMängija(b));
 
         Mäng mäng = new Mäng(pakk, mängijad);
 
