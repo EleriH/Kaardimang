@@ -5,15 +5,15 @@ import java.util.Random;
 /**
  * Klass, mis korraldab kaardimängu. St. jagab mängijatele pakist kaardid, küsib ükshaaval mängijate käest, millise
  * kaardi nad soovivad käia ja jagab võitjale punkte.
- *
+ * <p>
  * Kaardimäng koosneb mänguringidest. Kõigepealt jagatakse igale mängijale kaardipakist 8 kaarti.
  * Igas mänguringis käivad mängijad järjestikku lauale kaarte. Esimesena lauda käidud kaart määrab mänguringi masti.
  * Võidab mängija, kes käis kõige tugevama antud masti kaardi.
- *
+ * <p>
  * Esimest mänguringi alustab juhuslikult valitud mängija.
  * Järgmisi mänguringe alustab eelimise ringi võitja.
  * Edasi käivad mängijad kaarte vastavalt mängijate listi järjekorrale, mis antud klassi konstruktoris.
- *
+ * <p>
  * Mäng lõpeb, kui kaardipakis pole kaarte, et kõikidele mängijatele käidud kaardi asemele uut anda.
  */
 public class Mäng {
@@ -22,8 +22,9 @@ public class Mäng {
 
     /**
      * Konstruktor
+     *
      * @param kaardidPakis list kaartidest, mis mängu pannakse
-     * @param mängijad list mängijatest, kes mängust osa võtavad
+     * @param mängijad     list mängijatest, kes mängust osa võtavad
      */
     public Mäng(List<Kaart> kaardidPakis, List<Mängija> mängijad) {
         this.kaardidPakis = kaardidPakis;
@@ -33,13 +34,13 @@ public class Mäng {
     /**
      * Viib läbi terve mängu kuni pakis pole enam kaarte, et saaks kõigile mängijate käidud kaardi asemele ühe juurde
      * anda.
-     *
+     * <p>
      * Mängu käik ja tulemused trükitakse ekraanile
      */
     public void mängi() {
-        for (Mängija k : mängijad) {
+        for (Mängija mängija : mängijad) {
             for (int i = 0; i < 8; i++) {
-                k.lisaKaart(kaardidPakis.get(0));
+                mängija.lisaKaart(kaardidPakis.get(0));
                 kaardidPakis.remove(0);
             }
         }
@@ -47,7 +48,7 @@ public class Mäng {
         int järgmineAlustaja = new Random().nextInt(mängijad.size());
         int ringiNumber = 1;
         while (kaardidPakis.size() > mängijad.size()) {
-            System.out.println("Mänguring " + ringiNumber);
+            System.out.println("\u001B[32mMänguring " + ringiNumber + "\u001B[0m"); //mänguring väljastatakse rohelise värviga
             järgmineAlustaja = mänguring(järgmineAlustaja);
             for (Mängija m : mängijad) {
                 m.lisaKaart(kaardidPakis.get(0));
@@ -56,7 +57,7 @@ public class Mäng {
             ringiNumber++;
         }
 
-        System.out.println("Tulemused:");
+        System.out.println("\nTulemused:");
         for (Mängija m : mängijad) {
             System.out.println(m.getNimi() + ": " + m.getSkoor());
         }
@@ -64,21 +65,22 @@ public class Mäng {
 
     /**
      * Viib läbi ühe mänguringi
+     *
      * @param alustajaIndeks mänguringi alustava mängija indeks mängijate listis
      * @return võitja indeks
      */
     private int mänguring(int alustajaIndeks) {
-        ArrayList<Kaart> kaardidLaual = new ArrayList<>();
+        List<Kaart> kaardidLaual = new ArrayList<>();
 
         int kõigeTugevamIndeks = -1;
         Kaart kõigeTugevamKaart = null;
         int i = alustajaIndeks;
         do {
             // Küsitakse mängijalt kaarti ja lisatakse see lauale
-            Mängija m = mängijad.get(i);
-            Kaart k = m.käiKaart(kaardidLaual);
+            Mängija mängija = mängijad.get(i);
+            Kaart k = mängija.käiKaart(kaardidLaual);
             kaardidLaual.add(k);
-            System.out.println(m.getNimi() + " käib " + k);
+            System.out.println(mängija.getNimi() + " käib " + k);
 
             // Kontrollitakse, kas käidud kaart on uus tugevaim kaart
             if ((i == alustajaIndeks) ||

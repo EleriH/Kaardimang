@@ -8,13 +8,16 @@ import java.util.Random;
  * Kui sama masti kaarti käes pole või laual pole veel ühtegi kaarti, valib suvalise käes oleva kaardi.
  */
 public class TargemJuhuslikMängija extends Mängija {
+
+    private final Random random = new Random();
+
     public TargemJuhuslikMängija(String nimi) {
         super(nimi);
     }
 
     @Override
     public Kaart käiKaart(List<Kaart> kaardidLaual) {
-        ArrayList<Kaart> valik;
+        List<Kaart> valik;
 
         if (kaardidLaual.isEmpty())
             valik = kaardidKäes;
@@ -29,7 +32,7 @@ public class TargemJuhuslikMängija extends Mängija {
                 valik = kaardidKäes;
         }
 
-        int i = new Random().nextInt(valik.size());
+        int i = random.nextInt(valik.size());
         Kaart ajutine = valik.get(i);
         kaardidKäes.remove(ajutine);
         return ajutine;

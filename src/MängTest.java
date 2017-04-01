@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Eleri on 22.03.2017.
@@ -15,7 +16,6 @@ public class MängTest {
         Mäng mäng = new Mäng(pakk, mängijad);
 
         mäng.mängi();
-
     }
 }
 

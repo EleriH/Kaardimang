@@ -7,16 +7,14 @@ import java.util.List;
  */
 public abstract class Mängija {
     protected String nimi;
-    protected ArrayList<Kaart> kaardidKäes;
-    private int skoor;
+    protected List<Kaart> kaardidKäes = new ArrayList<>();
+    private int skoor = 0;
 
     public Mängija(String nimi) {
         this.nimi = nimi;
-        kaardidKäes = new ArrayList<>();
-        skoor = 0;
     }
 
-    public void lisaKaart(Kaart kaart){
+    public void lisaKaart(Kaart kaart) {
         kaardidKäes.add(kaart);
     }
 
