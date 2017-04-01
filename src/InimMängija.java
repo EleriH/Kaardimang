@@ -22,6 +22,8 @@ public class InimMängija extends Mängija {
         Scanner reader = new Scanner(System.in);
         System.out.println("Sisesta kaardinr, millega tahad vastu käia: ");
         int valitudKaart = reader.nextInt();
-        return kaardidKäes.get(valitudKaart);
+        Kaart ajutine = kaardidKäes.get(valitudKaart);
+        kaardidKäes.remove(ajutine);
+        return ajutine;
     }
 }
